@@ -1,0 +1,16 @@
+import json
+my_file=open("shikhu.txt","r")
+data=my_file.read()
+#print(data)
+a=data.split()
+#print(a)
+b=iter(a)
+c=dict(zip(b,b))
+#print(c)
+our_file=open("shikhu.json","w")
+json.dump(c,our_file,indent=5)
+our_file.close()
+with open ("shikhu.json","r") as json_file:
+    data=json.load(json_file)
+    print(data)
+    print(type(data))
